@@ -69,7 +69,7 @@ if (args.includes('dev')) {
         screw_ie8: true
       }
     })) */
-    .instructions(`> app/main.ts`);
+    .instructions(`> app/main.js`);
 
 }
 
