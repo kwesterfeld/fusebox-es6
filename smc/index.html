@@ -1,0 +1,59 @@
+<!doctype html>
+<!--
+DO NOT MODIFY; THIS FILE WILL BE REGENERATED.
+This is the development version of index.html.
+To modify, change index.html.tpl.
+Generated at 2017-08-17 08:08:00
+-->
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>Yellowbrick Data, Systems Management Console</title>
+    <meta build="764782235c04a47d73f87ca34db6889abc769fba">
+    <base href="/smc/">
+    <link rel="shortcut icon" href="favicon.ico" />
+
+
+    <script src="bundle/fuse/vendor.js"></script>
+    <script src="bundle/fuse/smc.js"></script>
+
+  </head>
+
+  <body class="smc smc-loading" onLoad="handleLoad()">
+
+    <div id="main-body" style='display:none;' ng-controller="smc-main" class="smc-main">
+      <div ng-cloak ng-show="loggedIn()" class="smc-nav-bordered">
+        <ng-include src="'smc-nav'"></ng-include>
+      </div>
+
+      <div ng-controller="smc-connection-monitor" ng-show="loggedIn()">
+        <smc-connection-status></smc-connection-status>
+      </div>
+
+      <div id="main" class="container-fluid ng-cloak">
+        <div ng-if="loggedIn() || isLoginView()" ng-view></div>
+      </div>
+
+      <div ng-hide="loggedIn()" class="smc-bottom-ribbon full-width">
+        <div class="pull-left">&copy; Copyright, 2015-{{currentYear}}.  Yellowbrick Data, Inc.</div>
+        <div class="pull-right" ng-controller="smc-about-controller">
+          <a href="" ng-click="about()">
+            <span translate>About...</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="smc-loading" id="smc-loading" style="visibility: hidden">
+      <div class="smc-loading-icon">
+      </div>
+      <div class="smc-loading-label" id="smc-loading-label" translate>Loading...</div>
+      <progress id="smc-loading-progress" value="0" max="100"></progress>
+    </div>
+
+
+
+  </body>
+</html>
